@@ -30,7 +30,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bpv-2x-xrW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="fvb-Hu-qCH"/>
+                    <tabBarItem key="tabBarItem" title="" image="translate" id="fvb-Hu-qCH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAo-mC-kFi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +58,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nEw-NV-YLz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="fOZ-8K-ND2"/>
+                    <tabBarItem key="tabBarItem" title="" image="exchangerate" id="fOZ-8K-ND2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2r-oh-1zQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,11 +105,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dh5-Jf-kX3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="6nP-ok-G8S"/>
+                    <tabBarItem key="tabBarItem" title="" image="weather" id="6nP-ok-G8S"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3j5-gK-sYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-43" y="204"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="exchangerate" width="25" height="25"/>
+        <image name="translate" width="26" height="26"/>
+        <image name="weather" width="21" height="16"/>
+    </resources>
 </document>

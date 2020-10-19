@@ -110,10 +110,10 @@
 		2452A9E5253C0F4A00ECD159 /* LeBaluchon */ = {
 			isa = PBXGroup;
 			children = (
-				2452AA08253C107C00ECD159 /* Supporting Files */,
 				2452A9EA253C0F4A00ECD159 /* ViewController.swift */,
 				24A9BA32253D661D00D524AC /* View */,
 				241B65B4253D692A002F3649 /* Controller */,
+				2452AA08253C107C00ECD159 /* Supporting Files */,
 			);
 			path = LeBaluchon;
 			sourceTree = "<group>";
