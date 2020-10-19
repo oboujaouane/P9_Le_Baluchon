@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241B65B6253D695F002F3649 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B65B5253D695F002F3649 /* ExchangeViewController.swift */; };
+		241B65B8253D6983002F3649 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B65B7253D6983002F3649 /* TranslateViewController.swift */; };
+		241B65BA253D6994002F3649 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B65B9253D6994002F3649 /* WeatherViewController.swift */; };
 		2452A9E7253C0F4A00ECD159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452A9E6253C0F4A00ECD159 /* AppDelegate.swift */; };
 		2452A9EB253C0F4A00ECD159 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452A9EA253C0F4A00ECD159 /* ViewController.swift */; };
 		2452A9EE253C0F4A00ECD159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2452A9EC253C0F4A00ECD159 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		11B559FDFBE78CEE4A91CF41 /* Pods-LeBaluchon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.debug.xcconfig"; sourceTree = "<group>"; };
+		241B65B5253D695F002F3649 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		241B65B7253D6983002F3649 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		241B65B9253D6994002F3649 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		2452A9E3253C0F4A00ECD159 /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2452A9E6253C0F4A00ECD159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		2452A9EA253C0F4A00ECD159 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +77,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		241B65B4253D692A002F3649 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				241B65B5253D695F002F3649 /* ExchangeViewController.swift */,
+				241B65B7253D6983002F3649 /* TranslateViewController.swift */,
+				241B65B9253D6994002F3649 /* WeatherViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2452A9DA253C0F4A00ECD159 = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +112,8 @@
 			children = (
 				2452AA08253C107C00ECD159 /* Supporting Files */,
 				2452A9EA253C0F4A00ECD159 /* ViewController.swift */,
-				2452A9EC253C0F4A00ECD159 /* Main.storyboard */,
+				24A9BA32253D661D00D524AC /* View */,
+				241B65B4253D692A002F3649 /* Controller */,
 			);
 			path = LeBaluchon;
 			sourceTree = "<group>";
@@ -119,6 +136,14 @@
 				2452A9F4253C0F4B00ECD159 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24A9BA32253D661D00D524AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2452A9EC253C0F4A00ECD159 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B54528B3074AABCB12F588C4 /* Pods */ = {
@@ -278,6 +303,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2452A9EB253C0F4A00ECD159 /* ViewController.swift in Sources */,
+				241B65BA253D6994002F3649 /* WeatherViewController.swift in Sources */,
+				241B65B8253D6983002F3649 /* TranslateViewController.swift in Sources */,
+				241B65B6253D695F002F3649 /* ExchangeViewController.swift in Sources */,
 				2452A9E7253C0F4A00ECD159 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
