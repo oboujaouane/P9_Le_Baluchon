@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/ousamaboujaouane/Documents/Formation/OpenClassrooms/P9_Re&#x301;alisez_une_application_de_voyage_URLSession/code/P9_Le_Baluchon/LeBaluchon.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
