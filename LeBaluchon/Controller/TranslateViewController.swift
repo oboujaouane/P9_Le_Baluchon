@@ -9,7 +9,19 @@
 import UIKit
 
 class TranslateViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    @IBOutlet weak var translateTextField: UITextField!
+    @IBOutlet weak var changeDestinationLanguageButton: UIButton!
+    @IBOutlet weak var translationTextView: UITextView!
+    @IBOutlet weak var changeLanguagePickerView: UIPickerView!
+    
+    // MARK: - Action
+    @IBAction func openPickerWithLanguages() {
+        print("openPickerWithLanguages button touched")
+    }
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 

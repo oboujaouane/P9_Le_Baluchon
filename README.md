@@ -16,4 +16,4 @@ To create all that we have to use these APIs:
 
 # Bonus feature
 
-## TO EDIT / TODO ##
+You can change the destination language in a pickerView by touching the button under textfield of TranslateViewController
