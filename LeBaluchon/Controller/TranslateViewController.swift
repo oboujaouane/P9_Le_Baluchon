@@ -33,12 +33,15 @@ class TranslateViewController: UIViewController {
 
 extension TranslateViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // TODO
-        print("launch WS call here")
-        print("param 1 is textfieldContent: \(String(describing: translateTextField.text))")
-        print("param 2 is current language code ISO: \(Languages.currentLanguageCodeISO)")
-        fillTranslationTextView(with: String(describing: translateTextField.text))
-        // END OF TODO
+//        // TODO
+//        print("launch WS call here")
+//        print("param 1 is textfieldContent: \(String(describing: translateTextField.text))")
+//        print("param 2 is current language code ISO: \(Languages.currentLanguageCodeISO)")
+//        fillTranslationTextView(with: String(describing: translateTextField.text))
+//        // END OF TODO
+        if let textToTranslate = translateTextField.text {
+            TranslateService.getTranslation(with: textToTranslate)
+        }
         textField.resignFirstResponder()
         return true
     }

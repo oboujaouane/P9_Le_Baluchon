@@ -13,6 +13,8 @@
 		241B65BC253ECA86002F3649 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B65BB253ECA86002F3649 /* Languages.swift */; };
 		241B65BF253ED295002F3649 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B65BE253ED295002F3649 /* APIKeys.swift */; };
 		241B65C1253EF86D002F3649 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B65C0253EF86D002F3649 /* Translate.swift */; };
+		241B65C3253EFE0A002F3649 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B65C2253EFE0A002F3649 /* TranslateService.swift */; };
+		241B65C5253EFFA5002F3649 /* ServicesURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B65C4253EFFA5002F3649 /* ServicesURLs.swift */; };
 		2452A9E7253C0F4A00ECD159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452A9E6253C0F4A00ECD159 /* AppDelegate.swift */; };
 		2452A9EE253C0F4A00ECD159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2452A9EC253C0F4A00ECD159 /* Main.storyboard */; };
 		2452A9F0253C0F4B00ECD159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2452A9EF253C0F4B00ECD159 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		241B65BB253ECA86002F3649 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		241B65BE253ED295002F3649 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		241B65C0253EF86D002F3649 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
+		241B65C2253EFE0A002F3649 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
+		241B65C4253EFFA5002F3649 /* ServicesURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesURLs.swift; sourceTree = "<group>"; };
 		2452A9E3253C0F4A00ECD159 /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2452A9E6253C0F4A00ECD159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		2452A9ED253C0F4A00ECD159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			children = (
 				241B65BB253ECA86002F3649 /* Languages.swift */,
 				241B65C0253EF86D002F3649 /* Translate.swift */,
+				241B65C2253EFE0A002F3649 /* TranslateService.swift */,
+				241B65C4253EFFA5002F3649 /* ServicesURLs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,10 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241B65C3253EFE0A002F3649 /* TranslateService.swift in Sources */,
 				241B65BF253ED295002F3649 /* APIKeys.swift in Sources */,
 				241B65BA253D6994002F3649 /* WeatherViewController.swift in Sources */,
 				241B65B8253D6983002F3649 /* TranslateViewController.swift in Sources */,
 				241B65C1253EF86D002F3649 /* Translate.swift in Sources */,
+				241B65C5253EFFA5002F3649 /* ServicesURLs.swift in Sources */,
 				241B65B6253D695F002F3649 /* ExchangeViewController.swift in Sources */,
 				2452A9E7253C0F4A00ECD159 /* AppDelegate.swift in Sources */,
 				241B65BC253ECA86002F3649 /* Languages.swift in Sources */,

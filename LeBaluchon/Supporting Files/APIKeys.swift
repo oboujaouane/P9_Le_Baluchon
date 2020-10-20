@@ -7,20 +7,5 @@
 //
 
 struct APIKeys {
-    static let GoogleTranslation = "AIzaSyBoSAy-NccJMmydIsl1B02hUxhc9HpNvf8"
+    static let GoogleTranslation = "REPLACE_WITH_VALID_API_KEY"
 }
-
-/*
- POST -> https://translation.googleapis.com/language/translate/v2?key=AIzaSyBoSAy-NccJMmydIsl1B02hUxhc9HpNvf8
-
- Content-Type: application/json
- Accept-Charset: utf-8
- 
- body JSON example :
- 
- {
-   "q": ["Bonjour comment allez-vous ?"],
-   "source": "fr",
-   "target": "en"
- } 
-*/
