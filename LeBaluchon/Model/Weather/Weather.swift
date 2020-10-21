@@ -8,10 +8,7 @@
 
 import Foundation
 
-/**
- Reflect the OpenWeather API response body JSON structure to decode Weather response
-*/
-// MARK: - Welcome
+// MARK: - EntireWeather
 struct EntireWeather: Codable {
     let weather: [Weather]
     let main: Main

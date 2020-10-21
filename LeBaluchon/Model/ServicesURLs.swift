@@ -36,7 +36,7 @@ class OpenWeather {
     // MARK: - Properties
     static private let endpoint = "https://api.openweathermap.org/data/2.5/weather"
     static private var parameters: String {
-        return "?units=metric&id=\(city)" // Get Celsius instead of Fahrenheit for city of New York
+        return "?units=metric&id=\(city)&lang=fr" // Get Celsius instead of Fahrenheit for city of New York
     }
     static private let accessKey = "&appid=\(APIKeys.OpenWeather)"
 
