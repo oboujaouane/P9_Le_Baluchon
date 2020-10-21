@@ -18,8 +18,10 @@
 		2452A9E7253C0F4A00ECD159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452A9E6253C0F4A00ECD159 /* AppDelegate.swift */; };
 		2452A9EE253C0F4A00ECD159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2452A9EC253C0F4A00ECD159 /* Main.storyboard */; };
 		2452A9F0253C0F4B00ECD159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2452A9EF253C0F4B00ECD159 /* Assets.xcassets */; };
-		2452A9FE253C0F4B00ECD159 /* LeBaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452A9FD253C0F4B00ECD159 /* LeBaluchonTests.swift */; };
 		2452AA0A253C10DF00ECD159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2452AA09253C10DF00ECD159 /* LaunchScreen.storyboard */; };
+		24EB39D625400DF100D4A8C5 /* googleTranslate.json in Resources */ = {isa = PBXBuildFile; fileRef = 24EB39D525400DF100D4A8C5 /* googleTranslate.json */; };
+		24EB39D825400F6000D4A8C5 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39D725400F6000D4A8C5 /* FakeResponseData.swift */; };
+		24EB39DA2540143700D4A8C5 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39D92540143700D4A8C5 /* URLSessionFake.swift */; };
 		762EEDCB82E7DF52719A1160 /* Pods_LeBaluchon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A296FCB3630FDFCB2BC31106 /* Pods_LeBaluchon.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,10 +51,12 @@
 		2452A9EF253C0F4B00ECD159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2452A9F4253C0F4B00ECD159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		2452A9F9253C0F4B00ECD159 /* LeBaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2452A9FD253C0F4B00ECD159 /* LeBaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBaluchonTests.swift; sourceTree = "<group>"; };
 		2452A9FF253C0F4B00ECD159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2452AA09253C10DF00ECD159 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24EB39D32540067B00D4A8C5 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		24EB39D525400DF100D4A8C5 /* googleTranslate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = googleTranslate.json; sourceTree = "<group>"; };
+		24EB39D725400F6000D4A8C5 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		24EB39D92540143700D4A8C5 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		27EC37823D677B069E0BC0C9 /* Pods-LeBaluchon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.debug.xcconfig"; sourceTree = "<group>"; };
 		381B7494C8A93B366A928936 /* Pods-LeBaluchon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.release.xcconfig"; sourceTree = "<group>"; };
 		A296FCB3630FDFCB2BC31106 /* Pods_LeBaluchon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeBaluchon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,8 +145,10 @@
 		2452A9FC253C0F4B00ECD159 /* LeBaluchonTests */ = {
 			isa = PBXGroup;
 			children = (
-				2452A9FD253C0F4B00ECD159 /* LeBaluchonTests.swift */,
 				2452A9FF253C0F4B00ECD159 /* Info.plist */,
+				24EB39D725400F6000D4A8C5 /* FakeResponseData.swift */,
+				24EB39D92540143700D4A8C5 /* URLSessionFake.swift */,
+				24EB39D425400DA700D4A8C5 /* JSON */,
 			);
 			path = LeBaluchonTests;
 			sourceTree = "<group>";
@@ -166,6 +172,14 @@
 				2452A9EC253C0F4A00ECD159 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		24EB39D425400DA700D4A8C5 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				24EB39D525400DF100D4A8C5 /* googleTranslate.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		B54528B3074AABCB12F588C4 /* Pods */ = {
@@ -235,6 +249,7 @@
 					};
 					2452A9F8253C0F4B00ECD159 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 						TestTargetID = 2452A9E2253C0F4A00ECD159;
 					};
 				};
@@ -273,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24EB39D625400DF100D4A8C5 /* googleTranslate.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2452A9FE253C0F4B00ECD159 /* LeBaluchonTests.swift in Sources */,
+				24EB39D825400F6000D4A8C5 /* FakeResponseData.swift in Sources */,
+				24EB39DA2540143700D4A8C5 /* URLSessionFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +563,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LeBaluchonTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -556,6 +574,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.sajid.Le-BaluchonTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeBaluchon.app/LeBaluchon";
@@ -567,6 +586,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LeBaluchonTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;

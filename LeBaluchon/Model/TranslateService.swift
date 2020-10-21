@@ -14,6 +14,11 @@ class TranslateService {
     private init() {}
     private var task: URLSessionDataTask?
     
+    private var translateSession = URLSession(configuration: .default)
+    init(translateSession: URLSession) {
+        self.translateSession = translateSession
+    }
+    
     // MARK: - Function
     func getTranslation(with text: String, callback: @escaping (Bool, String?) -> Void) {
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
@@ -22,9 +27,8 @@ class TranslateService {
         var request = URLRequest(url: URL(string: completeURL)!)
         request.httpMethod = HTTPMethod.post.rawValue
 
-        let session = URLSession(configuration: .default)
         task?.cancel()
-        task = session.dataTask(with: request) { data, response, error in
+        task = translateSession.dataTask(with: request) { data, response, error in // dependency injection
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callback(false, nil)
