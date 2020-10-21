@@ -7,7 +7,7 @@
 //
 
 struct Languages {
-    // MARK: properties
+    // MARK: Properties
     static let list:[(name: String, codeISO: String)] = [
         ("Anglais", "en"),
         ("Allemand", "de"),

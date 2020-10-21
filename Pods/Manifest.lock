@@ -1,16 +1,20 @@
 PODS:
+  - SVProgressHUD (2.2.5)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
+  - SVProgressHUD
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - SVProgressHUD
     - SwiftLint
 
 SPEC CHECKSUMS:
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: e281b1e04e3563b436241dd4882d147c06e7621b
+PODFILE CHECKSUM: 4bd053bd9065c20ea7874a1ca22c51dc1dc0f7c6
 
 COCOAPODS: 1.5.3

@@ -9,7 +9,13 @@
 import Foundation
 
 class TranslateService {
-    static func getTranslation(with text: String) {
+    // MARK: - Properties
+    static var shared = TranslateService()
+    private init() {}
+    private var task: URLSessionDataTask?
+    
+    // MARK: - Function
+    func getTranslation(with text: String, callback: @escaping (Bool, String?) -> Void) {
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let completeURL = GoogleTranslation.url + encodedText!
 
@@ -17,30 +23,41 @@ class TranslateService {
         request.httpMethod = HTTPMethod.post.rawValue
 
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: request) { data, response, error in
-            if let data = data, error == nil {
-                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    if let responseJSON = try? JSONDecoder().decode(Translate.self, from: data) {
-                        print(responseJSON)
-                    }
+        task?.cancel()
+        task = session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                guard let data = data, error == nil else {
+                    callback(false, nil)
+                    return
                 }
+
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    callback(false, nil)
+                    return
+                }
+
+                guard let responseJSON = try? JSONDecoder().decode(Translate.self, from: data) else {
+                    callback(false, nil)
+                    return
+                }
+
+                callback(true, responseJSON.data.translations[0].translatedText)
             }
         }
-        task.resume()
+        task?.resume()
     }
 }
 
 /*
- POST -> https://translation.googleapis.com/language/translate/v2?key=AIzaSyBoSAy-NccJMmydIsl1B02hUxhc9HpNvf8
-
+ 
  Content-Type: application/json
  Accept-Charset: utf-8
  
  body JSON example :
  
  {
-   "q": ["Bonjour comment allez-vous ?"],
-   "source": "fr",
-   "target": "en"
+ "q": ["Bonjour comment allez-vous ?"],
+ "source": "fr",
+ "target": "en"
  }
-*/
+ */

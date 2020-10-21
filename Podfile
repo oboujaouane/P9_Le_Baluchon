@@ -8,5 +8,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'LeBaluchon' do
+  pod 'SVProgressHUD'
   pod 'SwiftLint'
 end

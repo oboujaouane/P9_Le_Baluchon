@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sajid. All rights reserved.
 //
 
+import SVProgressHUD
 import UIKit
 
 class TranslateViewController: UIViewController {
@@ -25,9 +26,19 @@ class TranslateViewController: UIViewController {
         view.endEditing(true)
     }
 
-    // MARK: - function
-    private func fillTranslationTextView(with text: String) {
-        translationTextView.text = text
+    // MARK: - Functions
+    private func update(translationText: String) {
+        translationTextView.text = translationText
+    }
+
+    private func loader(shown: Bool) {
+        DispatchQueue.main.async {
+            if shown {
+                SVProgressHUD.show()
+            } else {
+                SVProgressHUD.dismiss()
+            }
+        }
     }
 }
 
@@ -39,11 +50,31 @@ extension TranslateViewController: UITextFieldDelegate {
 //        print("param 2 is current language code ISO: \(Languages.currentLanguageCodeISO)")
 //        fillTranslationTextView(with: String(describing: translateTextField.text))
 //        // END OF TODO
+        loader(shown: true)
+
         if let textToTranslate = translateTextField.text {
-            TranslateService.getTranslation(with: textToTranslate)
+            TranslateService.shared.getTranslation(with: textToTranslate) { [weak self] success, translatedText in
+                guard let self = self else { return }
+
+                self.loader(shown: false)
+                if success, let translatedText = translatedText {
+                    self.update(translationText: translatedText)
+                } else {
+                    self.presentAlert()
+                }
+            }
         }
         textField.resignFirstResponder()
         return true
+    }
+
+    // TODO: relocate
+    private func presentAlert() {
+        let alertVC = UIAlertController(title: "Petit problème",
+                                        message: "Google traduction n'a pas répondu.\nVeuillez réessayer.",
+                                        preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
     }
 }
 
