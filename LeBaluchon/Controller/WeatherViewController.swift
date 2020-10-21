@@ -9,6 +9,10 @@
 import SVProgressHUD
 
 class WeatherViewController: UIViewController {
+    // MARK: - Outlets
+    @IBOutlet private weak var parisTemperatureLabel: UILabel!
+    @IBOutlet private weak var newYorkTemperatureLabel: UILabel!
+    
     // MARK: - Life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,12 +26,11 @@ class WeatherViewController: UIViewController {
             guard let self = self else { return }
 
             if success, let weather = weather {
-                print("city: \(weather.name)")
-                print("weather description: \(weather.weather[0].weatherDescription)")
-                print("weather temperature: \(weather.main.temp)")
-                if city != .newYork {
+                if city == .paris {
+                    self.parisTemperatureLabel.text = "\(Int(weather.main.temp))°C"
                     self.callWeatherService(for: .newYork)
                 } else {
+                    self.newYorkTemperatureLabel.text = "\(Int(weather.main.temp))°C"
                     SVProgressHUD.loader(shown: false)
                 }
             } else {
@@ -36,5 +39,4 @@ class WeatherViewController: UIViewController {
             }
         }
     }
-
 }
