@@ -23,6 +23,8 @@
 		24EB39D825400F6000D4A8C5 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39D725400F6000D4A8C5 /* FakeResponseData.swift */; };
 		24EB39DA2540143700D4A8C5 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39D92540143700D4A8C5 /* URLSessionFake.swift */; };
 		24EB39DC2540194B00D4A8C5 /* TranslateServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39DB2540194B00D4A8C5 /* TranslateServiceTestCase.swift */; };
+		24EB39E12540531C00D4A8C5 /* fixerExchangeRate.json in Resources */ = {isa = PBXBuildFile; fileRef = 24EB39E02540531C00D4A8C5 /* fixerExchangeRate.json */; };
+		24EB39E62540756900D4A8C5 /* openWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = 24EB39E52540756900D4A8C5 /* openWeather.json */; };
 		762EEDCB82E7DF52719A1160 /* Pods_LeBaluchon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A296FCB3630FDFCB2BC31106 /* Pods_LeBaluchon.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		24EB39D725400F6000D4A8C5 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		24EB39D92540143700D4A8C5 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		24EB39DB2540194B00D4A8C5 /* TranslateServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateServiceTestCase.swift; sourceTree = "<group>"; };
+		24EB39E02540531C00D4A8C5 /* fixerExchangeRate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fixerExchangeRate.json; sourceTree = "<group>"; };
+		24EB39E52540756900D4A8C5 /* openWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openWeather.json; sourceTree = "<group>"; };
 		27EC37823D677B069E0BC0C9 /* Pods-LeBaluchon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.debug.xcconfig"; sourceTree = "<group>"; };
 		381B7494C8A93B366A928936 /* Pods-LeBaluchon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.release.xcconfig"; sourceTree = "<group>"; };
 		A296FCB3630FDFCB2BC31106 /* Pods_LeBaluchon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeBaluchon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,8 +154,9 @@
 				2452A9FF253C0F4B00ECD159 /* Info.plist */,
 				24EB39D725400F6000D4A8C5 /* FakeResponseData.swift */,
 				24EB39D92540143700D4A8C5 /* URLSessionFake.swift */,
-				24EB39DB2540194B00D4A8C5 /* TranslateServiceTestCase.swift */,
-				24EB39D425400DA700D4A8C5 /* JSON */,
+				24EB39DE254052EC00D4A8C5 /* FixerExchangeRate */,
+				24EB39DD2540526900D4A8C5 /* GoogleTranslate */,
+				24EB39E42540755700D4A8C5 /* OpenWeather */,
 			);
 			path = LeBaluchonTests;
 			sourceTree = "<group>";
@@ -177,12 +182,29 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		24EB39D425400DA700D4A8C5 /* JSON */ = {
+		24EB39DD2540526900D4A8C5 /* GoogleTranslate */ = {
 			isa = PBXGroup;
 			children = (
+				24EB39DB2540194B00D4A8C5 /* TranslateServiceTestCase.swift */,
 				24EB39D525400DF100D4A8C5 /* googleTranslate.json */,
 			);
-			path = JSON;
+			path = GoogleTranslate;
+			sourceTree = "<group>";
+		};
+		24EB39DE254052EC00D4A8C5 /* FixerExchangeRate */ = {
+			isa = PBXGroup;
+			children = (
+				24EB39E02540531C00D4A8C5 /* fixerExchangeRate.json */,
+			);
+			path = FixerExchangeRate;
+			sourceTree = "<group>";
+		};
+		24EB39E42540755700D4A8C5 /* OpenWeather */ = {
+			isa = PBXGroup;
+			children = (
+				24EB39E52540756900D4A8C5 /* openWeather.json */,
+			);
+			path = OpenWeather;
 			sourceTree = "<group>";
 		};
 		B54528B3074AABCB12F588C4 /* Pods */ = {
@@ -292,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				24EB39D625400DF100D4A8C5 /* googleTranslate.json in Resources */,
+				24EB39E12540531C00D4A8C5 /* fixerExchangeRate.json in Resources */,
+				24EB39E62540756900D4A8C5 /* openWeather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

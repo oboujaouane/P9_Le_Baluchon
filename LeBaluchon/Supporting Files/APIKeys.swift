@@ -7,5 +7,7 @@
 //
 
 struct APIKeys {
+    static let FixerExchangeRate = "REPLACE_WITH_VALID_API_KEY"
     static let GoogleTranslation = "REPLACE_WITH_VALID_API_KEY"
+    static let OpenWeather = "REPLACE_WITH_VALID_API_KEY"
 }
