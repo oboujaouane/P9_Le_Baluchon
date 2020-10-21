@@ -24,11 +24,13 @@ enum WebService {
 
 // MARK: - Google Translation
 
-struct GoogleTranslation {
+class GoogleTranslation {
+    // MARK: - Properties
     static private let endpoint = "https://translation.googleapis.com/language/translate/v2"
     static private let accessKey = "?key=\(APIKeys.GoogleTranslation)"
-    static private let parameters = "&source=fr&target=en&format=text&q="
-
+    static private var parameters: String {
+        return "&source=fr&target=\(Languages.currentLanguageCodeISO)&format=text&q="
+    }
     static var url: String {
         return GoogleTranslation.endpoint + GoogleTranslation.accessKey + GoogleTranslation.parameters
     }
