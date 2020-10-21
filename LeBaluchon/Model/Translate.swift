@@ -12,7 +12,7 @@ Translate WS returns:
      "data": {
          "translations": [
              {
-                 "translatedText": "Hello how are you ?"
+                 "translatedText": "Hello how are you?"
              }
          ]
      }

@@ -10,13 +10,13 @@ import Foundation
 
 class FakeResponseData {
     // MARK: - HTTP status code
-    let responseOK = HTTPURLResponse(
+    static let responseOK = HTTPURLResponse(
         url: URL(string: "https://openclassrooms.com")!,
         statusCode: 200,
         httpVersion: nil,
         headerFields: nil)!
 
-    let responseKO = HTTPURLResponse(
+    static let responseKO = HTTPURLResponse(
         url: URL(string: "https://openclassrooms.com")!,
         statusCode: 500,
         httpVersion: nil,
@@ -24,16 +24,16 @@ class FakeResponseData {
 
     // MARK: - Error
     class SimpleError: Error {}
-    let error = SimpleError()
+    static let error = SimpleError()
 
     // MARK: - Incorrect data
-    let incorrectData = "erreur".data(using: .utf8)!
+    static let incorrectData = "erreur".data(using: .utf8)!
 
     // MARK: - Fixer
     // TODO
 
     // MARK: - Google Translate
-    var translateCorrectData: Data {
+    static var translateCorrectData: Data {
         let bundle = Bundle(for: FakeResponseData.self)
         let url = bundle.url(forResource: "googleTranslate", withExtension: "json")
         // swiftlint:disable force_try

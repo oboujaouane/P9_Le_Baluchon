@@ -13,12 +13,12 @@ class TranslateService {
     static var shared = TranslateService()
     private init() {}
     private var task: URLSessionDataTask?
-    
+
     private var translateSession = URLSession(configuration: .default)
     init(translateSession: URLSession) {
         self.translateSession = translateSession
     }
-    
+
     // MARK: - Function
     func getTranslation(with text: String, callback: @escaping (Bool, String?) -> Void) {
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
@@ -51,17 +51,3 @@ class TranslateService {
         task?.resume()
     }
 }
-
-/*
- 
- Content-Type: application/json
- Accept-Charset: utf-8
- 
- body JSON example :
- 
- {
- "q": ["Bonjour comment allez-vous ?"],
- "source": "fr",
- "target": "en"
- }
- */
