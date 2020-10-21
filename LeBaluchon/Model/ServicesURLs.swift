@@ -14,11 +14,6 @@ enum HTTPMethod: String {
     case post = "POST"
 }
 
-/// Webservices used
-enum WebService {
-    case fixer, googleTranslation, yahooWeather
-}
-
 // MARK: - Fixer
 // TODO
 
@@ -36,5 +31,17 @@ class GoogleTranslation {
     }
 }
 
-// MARK: - Yahoo Weather
-// TODO
+// MARK: - Weather
+class OpenWeather {
+    // MARK: - Properties
+    static private let endpoint = "https://api.openweathermap.org/data/2.5/weather"
+    static private var parameters: String {
+        return "?units=metric&id=\(city)" // Get Celsius instead of Fahrenheit for city of New York
+    }
+    static private let accessKey = "&appid=\(APIKeys.OpenWeather)"
+
+    static var city = ""
+    static var url: String {
+        return OpenWeather.endpoint + OpenWeather.parameters + OpenWeather.accessKey
+    }
+}

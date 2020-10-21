@@ -41,6 +41,12 @@ class FakeResponseData {
         return data
     }
 
-    // MARK: - Yahoo Weather
-    // TODO
+    // MARK: - OpenWeather
+    static var weatherCorrectData: Data {
+        let bundle = Bundle(for: FakeResponseData.self)
+        let url = bundle.url(forResource: "openWeather", withExtension: "json")
+        // swiftlint:disable force_try
+        let data = try! Data(contentsOf: url!)
+        return data
+    }
 }

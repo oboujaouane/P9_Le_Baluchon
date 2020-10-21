@@ -30,45 +30,27 @@ class TranslateViewController: UIViewController {
     private func update(translationText: String) {
         translationTextView.text = translationText
     }
-
-    private func loader(shown: Bool) {
-        DispatchQueue.main.async {
-            if shown {
-                SVProgressHUD.show()
-            } else {
-                SVProgressHUD.dismiss()
-            }
-        }
-    }
 }
 
 extension TranslateViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        loader(shown: true)
+        SVProgressHUD.loader(shown: true)
 
         if let textToTranslate = translateTextField.text {
             TranslateService.shared.getTranslation(with: textToTranslate) { [weak self] success, translatedText in
                 guard let self = self else { return }
 
-                self.loader(shown: false)
+                SVProgressHUD.loader(shown: false)
                 if success, let translatedText = translatedText {
                     self.update(translationText: translatedText)
                 } else {
-                    self.presentAlert()
+                    self.presentAlert(title: "Petit problème",
+                                      message: "Google traduction n'a pas répondu.\nVeuillez réessayer.")
                 }
             }
         }
         textField.resignFirstResponder()
         return true
-    }
-
-    // TODO: relocate
-    private func presentAlert() {
-        let alertVC = UIAlertController(title: "Petit problème",
-                                        message: "Google traduction n'a pas répondu.\nVeuillez réessayer.",
-                                        preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
     }
 }
 
