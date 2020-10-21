@@ -32,6 +32,8 @@
 		24EB39F32540810000D4A8C5 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39F22540810000D4A8C5 /* UIViewController+Extensions.swift */; };
 		24EB39F525408BA400D4A8C5 /* WeatherServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39F425408BA400D4A8C5 /* WeatherServiceTestCase.swift */; };
 		24EB39F72540BFCC00D4A8C5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39F62540BFCC00D4A8C5 /* String+Extensions.swift */; };
+		24EB39FC2540C2D200D4A8C5 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39FB2540C2D200D4A8C5 /* ExchangeRateService.swift */; };
+		24EB39FE2540C35B00D4A8C5 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB39FD2540C35B00D4A8C5 /* ExchangeRate.swift */; };
 		762EEDCB82E7DF52719A1160 /* Pods_LeBaluchon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A296FCB3630FDFCB2BC31106 /* Pods_LeBaluchon.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		24EB39F22540810000D4A8C5 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		24EB39F425408BA400D4A8C5 /* WeatherServiceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherServiceTestCase.swift; path = LeBaluchonTests/OpenWeather/WeatherServiceTestCase.swift; sourceTree = SOURCE_ROOT; };
 		24EB39F62540BFCC00D4A8C5 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		24EB39FB2540C2D200D4A8C5 /* ExchangeRateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
+		24EB39FD2540C35B00D4A8C5 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		27EC37823D677B069E0BC0C9 /* Pods-LeBaluchon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.debug.xcconfig"; sourceTree = "<group>"; };
 		381B7494C8A93B366A928936 /* Pods-LeBaluchon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.release.xcconfig"; sourceTree = "<group>"; };
 		A296FCB3630FDFCB2BC31106 /* Pods_LeBaluchon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeBaluchon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +127,7 @@
 		241B65BD253ECA8D002F3649 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24EB39FA2540C2B400D4A8C5 /* ExchangeRate */,
 				24EB39E92540785800D4A8C5 /* Translate */,
 				24EB39EA2540786700D4A8C5 /* Weather */,
 				241B65C4253EFFA5002F3649 /* ServicesURLs.swift */,
@@ -250,6 +255,15 @@
 				24EB39F62540BFCC00D4A8C5 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		24EB39FA2540C2B400D4A8C5 /* ExchangeRate */ = {
+			isa = PBXGroup;
+			children = (
+				24EB39FB2540C2D200D4A8C5 /* ExchangeRateService.swift */,
+				24EB39FD2540C35B00D4A8C5 /* ExchangeRate.swift */,
+			);
+			path = ExchangeRate;
 			sourceTree = "<group>";
 		};
 		B54528B3074AABCB12F588C4 /* Pods */ = {
@@ -439,7 +453,9 @@
 				241B65C3253EFE0A002F3649 /* TranslateService.swift in Sources */,
 				241B65BF253ED295002F3649 /* APIKeys.swift in Sources */,
 				241B65BA253D6994002F3649 /* WeatherViewController.swift in Sources */,
+				24EB39FC2540C2D200D4A8C5 /* ExchangeRateService.swift in Sources */,
 				24EB39EE2540794700D4A8C5 /* Weather.swift in Sources */,
+				24EB39FE2540C35B00D4A8C5 /* ExchangeRate.swift in Sources */,
 				241B65B8253D6983002F3649 /* TranslateViewController.swift in Sources */,
 				241B65C1253EF86D002F3649 /* Translate.swift in Sources */,
 				24EB39EC2540789100D4A8C5 /* Cities.swift in Sources */,

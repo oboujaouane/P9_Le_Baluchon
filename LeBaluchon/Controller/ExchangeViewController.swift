@@ -6,14 +6,27 @@
 //  Copyright © 2020 Sajid. All rights reserved.
 //
 
-import UIKit
+import SVProgressHUD
 
 class ExchangeViewController: UIViewController {
+    // MARK: - Action
+    @IBAction func touchCalculRate() {
+        callExchangeRateService()
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Function
+    private func callExchangeRateService() {
+        SVProgressHUD.loader(shown: true)
+               ExchangeRateService.shared.getExchangeRate { [weak self] success, exchangeRate in
+                   guard let self = self else { return }
 
-        // Do any additional setup after loading the view.
-        print("ExchangeViewController loaded")
+                   if success, let exchangeRate = exchangeRate {
+                       print(exchangeRate.rates.usd)
+                       SVProgressHUD.loader(shown: false)
+                   } else {
+                       self.presentAlert(title: "Petit problème",
+                                         message: "Fixer n'a pas pu récupérer le taux de change.\nVeuillez réessayer.")
+                   }
+               }
     }
 }

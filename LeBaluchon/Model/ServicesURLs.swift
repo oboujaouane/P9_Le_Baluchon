@@ -15,7 +15,18 @@ enum HTTPMethod: String {
 }
 
 // MARK: - Fixer
-// TODO
+class FixerExchangeRate {
+    // MARK: - Properties
+    static private let endpoint = "http://data.fixer.io/api/latest"
+    static private var parameters: String {
+        return "?symbols=USD"
+    }
+    static private let accessKey = "&access_key=\(APIKeys.FixerExchangeRate)"
+
+    static var url: String {
+        return FixerExchangeRate.endpoint + FixerExchangeRate.parameters + FixerExchangeRate.accessKey
+    }
+}
 
 // MARK: - Google Translation
 

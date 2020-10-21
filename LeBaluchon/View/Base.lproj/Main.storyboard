@@ -133,17 +133,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ExchangeRateViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-Co-daW">
-                                <rect key="frame" x="49.5" y="229.5" width="221" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convertisseur de monnaie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sai-kA-cV4">
+                                <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrez un montant en euro - EUR" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hVX-8j-CMc">
+                                <rect key="frame" x="20" y="49" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bea-8b-oQp" id="fss-VY-LL1"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant en Dollard - USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQP-Wv-ysY">
+                                <rect key="frame" x="20" y="99" width="280" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaB-kt-nUG">
+                                <rect key="frame" x="20" y="128" width="280" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="prh-qn-D98"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DT7-9a-c45">
+                                <rect key="frame" x="20" y="194" width="280" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="mfK-96-pjo"/>
+                                </constraints>
+                                <state key="normal" title="Convertir en dollard - USD"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchCalculRate" destination="PUP-bd-Fz3" eventType="touchUpInside" id="AN1-S9-yRg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Fmp-Co-daW" firstAttribute="centerY" secondItem="5nS-Vp-HNW" secondAttribute="centerY" id="9Cc-wh-JvE"/>
-                            <constraint firstItem="Fmp-Co-daW" firstAttribute="centerX" secondItem="5nS-Vp-HNW" secondAttribute="centerX" id="SI7-rN-Jzv"/>
+                            <constraint firstItem="SaB-kt-nUG" firstAttribute="top" secondItem="vQP-Wv-ysY" secondAttribute="bottom" constant="8" id="0nY-LG-ZJC"/>
+                            <constraint firstItem="vQP-Wv-ysY" firstAttribute="top" secondItem="hVX-8j-CMc" secondAttribute="bottom" constant="16" id="17i-PB-v7V"/>
+                            <constraint firstItem="SaB-kt-nUG" firstAttribute="leading" secondItem="nEw-NV-YLz" secondAttribute="leading" constant="20" id="1MW-DC-fjQ"/>
+                            <constraint firstItem="nEw-NV-YLz" firstAttribute="trailing" secondItem="SaB-kt-nUG" secondAttribute="trailing" constant="20" id="2bw-EO-bci"/>
+                            <constraint firstItem="vQP-Wv-ysY" firstAttribute="leading" secondItem="nEw-NV-YLz" secondAttribute="leading" constant="20" id="PTu-6E-BLZ"/>
+                            <constraint firstItem="hVX-8j-CMc" firstAttribute="top" secondItem="sai-kA-cV4" secondAttribute="bottom" constant="8" id="V9e-xX-eyp"/>
+                            <constraint firstItem="sai-kA-cV4" firstAttribute="leading" secondItem="nEw-NV-YLz" secondAttribute="leading" constant="20" id="YOQ-vt-TXg"/>
+                            <constraint firstItem="sai-kA-cV4" firstAttribute="top" secondItem="nEw-NV-YLz" secondAttribute="top" constant="20" id="eGZ-3i-kF4"/>
+                            <constraint firstItem="nEw-NV-YLz" firstAttribute="trailing" secondItem="hVX-8j-CMc" secondAttribute="trailing" constant="20" id="g2N-BW-Ja7"/>
+                            <constraint firstItem="nEw-NV-YLz" firstAttribute="trailing" secondItem="DT7-9a-c45" secondAttribute="trailing" constant="20" id="hHW-B2-geS"/>
+                            <constraint firstItem="DT7-9a-c45" firstAttribute="top" secondItem="SaB-kt-nUG" secondAttribute="bottom" constant="32" id="m0w-rB-lqu"/>
+                            <constraint firstItem="nEw-NV-YLz" firstAttribute="trailing" secondItem="vQP-Wv-ysY" secondAttribute="trailing" constant="20" id="rhF-EM-64F"/>
+                            <constraint firstItem="hVX-8j-CMc" firstAttribute="leading" secondItem="nEw-NV-YLz" secondAttribute="leading" constant="20" id="vFW-9R-yxN"/>
+                            <constraint firstItem="nEw-NV-YLz" firstAttribute="trailing" secondItem="sai-kA-cV4" secondAttribute="trailing" constant="20" id="wAe-bf-qpN"/>
+                            <constraint firstItem="DT7-9a-c45" firstAttribute="leading" secondItem="nEw-NV-YLz" secondAttribute="leading" constant="20" id="z7g-hS-NQQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nEw-NV-YLz"/>
                     </view>
