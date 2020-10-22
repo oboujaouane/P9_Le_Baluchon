@@ -11,10 +11,10 @@ import UIKit
 
 class TranslateViewController: UIViewController {
     // MARK: - Outlets
-    @IBOutlet weak var translateTextField: UITextField!
-    @IBOutlet weak var changeDestinationLanguageButton: UIButton!
-    @IBOutlet weak var translationTextView: UITextView!
-    @IBOutlet weak var changeLanguagePickerView: UIPickerView!
+    @IBOutlet private weak var translateTextField: UITextField!
+    @IBOutlet private weak var changeDestinationLanguageButton: UIButton!
+    @IBOutlet private weak var translationTextView: UITextView!
+    @IBOutlet private weak var changeLanguagePickerView: UIPickerView!
 
     // MARK: - Actions
     @IBAction func openPickerWithLanguages() {
@@ -36,19 +36,24 @@ extension TranslateViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         SVProgressHUD.loader(shown: true)
 
-        if let textToTranslate = translateTextField.text {
-            TranslateService.shared.getTranslation(with: textToTranslate) { [weak self] success, translatedText in
-                guard let self = self else { return }
-
-                SVProgressHUD.loader(shown: false)
-                if success, let translatedText = translatedText {
-                    self.update(translationText: translatedText)
-                } else {
-                    self.presentAlert(title: "Petit problème",
-                                      message: "Google traduction n'a pas répondu.\nVeuillez réessayer.")
-                }
+        guard let textToTranslate = textField.text else {
+            self.presentAlert(title: "Petit problème",
+            message: "Google traduction n'a pas répondu.\nVeuillez réessayer.")
+            return true
+        }
+        
+        TranslateService.shared.getTranslation(with: textToTranslate) { [weak self] success, translatedText in
+            guard let self = self else { return }
+            
+            SVProgressHUD.loader(shown: false)
+            if success, let translatedText = translatedText {
+                self.update(translationText: translatedText)
+            } else {
+                self.presentAlert(title: "Petit problème",
+                                  message: "Google traduction n'a pas répondu.\nVeuillez réessayer.")
             }
         }
+        
         textField.resignFirstResponder()
         return true
     }

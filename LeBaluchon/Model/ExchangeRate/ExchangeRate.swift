@@ -6,6 +6,8 @@
 //  Copyright © 2020 Sajid. All rights reserved.
 //
 
+import Foundation
+
 // Reflect the Fixer exchange rate API response body JSON structure to decode Fixer response
 // MARK: - ExchangeRate
 struct ExchangeRate: Codable {
@@ -17,7 +19,7 @@ struct ExchangeRate: Codable {
 
 // MARK: - Rates
 struct Rates: Codable {
-    let usd: Double
+    let usd: Decimal
 
     enum CodingKeys: String, CodingKey {
         case usd = "USD"
