@@ -27,6 +27,20 @@ class TranslateViewController: UIViewController {
     }
 
     // MARK: - Functions
+    private func callTranslateService(with textToTranslate: String) {
+        TranslateService.shared.getTranslation(with: textToTranslate) { [weak self] success, translatedText in
+            guard let self = self else { return }
+
+            SVProgressHUD.loader(shown: false)
+            if success, let translatedText = translatedText {
+                self.update(translationText: translatedText)
+            } else {
+                self.presentAlert(title: "Petit problème",
+                                  message: "Google traduction n'a pas répondu.\nVeuillez réessayer.")
+            }
+        }
+    }
+    
     private func update(translationText: String) {
         translationTextView.text = translationText
     }
@@ -41,19 +55,8 @@ extension TranslateViewController: UITextFieldDelegate {
             message: "Google traduction n'a pas répondu.\nVeuillez réessayer.")
             return true
         }
-        
-        TranslateService.shared.getTranslation(with: textToTranslate) { [weak self] success, translatedText in
-            guard let self = self else { return }
-            
-            SVProgressHUD.loader(shown: false)
-            if success, let translatedText = translatedText {
-                self.update(translationText: translatedText)
-            } else {
-                self.presentAlert(title: "Petit problème",
-                                  message: "Google traduction n'a pas répondu.\nVeuillez réessayer.")
-            }
-        }
-        
+        callTranslateService(with: textToTranslate)
+
         textField.resignFirstResponder()
         return true
     }
@@ -75,6 +78,14 @@ extension TranslateViewController: UIPickerViewDataSource, UIPickerViewDelegate 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let currentLanguageSelected = Languages.list[row]
         Languages.currentLanguageCodeISO = currentLanguageSelected.codeISO
+
+        guard let textToTranslate = translateTextField.text else {
+            self.presentAlert(title: "Petit problème",
+            message: "Google traduction n'a pas répondu.\nVeuillez réessayer.")
+            return
+        }
+        callTranslateService(with: textToTranslate)
+
         changeDestinationLanguageButton.setTitle(currentLanguageSelected.name, for: .normal)
         changeLanguagePickerView.isHidden = true
     }
