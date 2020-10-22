@@ -30,7 +30,13 @@ class FakeResponseData {
     static let incorrectData = "erreur".data(using: .utf8)!
 
     // MARK: - Fixer
-    // TODO
+    static var exchangeRateCorrectData: Data {
+        let bundle = Bundle(for: FakeResponseData.self)
+        let url = bundle.url(forResource: "fixerExchangeRate", withExtension: "json")
+        // swiftlint:disable force_try
+        let data = try! Data(contentsOf: url!)
+        return data
+    }
 
     // MARK: - Google Translate
     static var translateCorrectData: Data {
