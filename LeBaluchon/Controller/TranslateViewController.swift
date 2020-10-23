@@ -40,7 +40,7 @@ class TranslateViewController: UIViewController {
             }
         }
     }
-    
+
     private func update(translationText: String) {
         translationTextView.text = translationText
     }

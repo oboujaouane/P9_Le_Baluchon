@@ -24,4 +24,11 @@ struct Rates: Codable {
     enum CodingKeys: String, CodingKey {
         case usd = "USD"
     }
+
+    static func getUSDAmount(fromEuro amount: Decimal, withRate usd: Decimal) -> Decimal {
+        var amountInUSD = amount * usd
+        var amountInUSDrounded: Decimal = Decimal()
+        NSDecimalRound(&amountInUSDrounded, &amountInUSD, 2, .plain)
+        return amountInUSDrounded
+    }
 }

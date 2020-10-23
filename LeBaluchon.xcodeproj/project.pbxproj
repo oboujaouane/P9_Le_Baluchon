@@ -263,8 +263,8 @@
 		24EB39FA2540C2B400D4A8C5 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
-				24EB39FB2540C2D200D4A8C5 /* ExchangeRateService.swift */,
 				24EB39FD2540C35B00D4A8C5 /* ExchangeRate.swift */,
+				24EB39FB2540C2D200D4A8C5 /* ExchangeRateService.swift */,
 			);
 			path = ExchangeRate;
 			sourceTree = "<group>";

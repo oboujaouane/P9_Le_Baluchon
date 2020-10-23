@@ -20,10 +20,7 @@ class ExchangeViewController: UIViewController {
             guard let self = self else { return }
 
             if success, let exchangeRate = exchangeRate {
-                var amountInUSD = amount * exchangeRate.rates.usd
-                var amountInUSDrounded: Decimal = Decimal()
-                NSDecimalRound(&amountInUSDrounded, &amountInUSD, 2, .plain)
-                self.usdLabel.text = "\(amountInUSDrounded)"
+                self.usdLabel.text = "\(Rates.getUSDAmount(fromEuro: amount, withRate: exchangeRate.rates.usd))"
                 SVProgressHUD.loader(shown: false)
             } else {
                 self.presentAlert(title: "Petit problème",
